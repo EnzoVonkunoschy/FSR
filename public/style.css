@@ -23,7 +23,29 @@ body {
     background-image: url("fondo01.png");
     background-repeat: no-repeat;
     background-position:center 50px;
+    max-width: 600px;
 }
+
+/* Estilos para el botón */
+/* Oculta el botón original*/
+input[type="file"] {
+  position: absolute;
+  width: 0;
+  height: 0;
+  opacity: 0;
+} 
+/* Estilos para el botón personalizado */
+.boton-personalizado {
+  /*display: inline-block;*/
+  display: flex;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: 1px solid #007bff;
+  cursor: pointer;
+}
+
+
 
   
   .screen {
@@ -44,6 +66,13 @@ body {
     overflow: hidden;
     opacity: 60%;
   }
+
+  label {
+    text-align: center;
+  }
+  p {
+    padding: 2px;
+  }
   
   /* 13 */
   .btn-13 {
@@ -51,8 +80,14 @@ body {
     border: none;
     
   }
+
+  .selected {
+    width: 95%;
+    background-color: #0f0;
+    padding: 3px;
+  }
+
   .custom-btn {
-    
     height: 40px;
     color: white;
     border-radius: 5px;

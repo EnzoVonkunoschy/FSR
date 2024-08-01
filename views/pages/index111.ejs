@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="/style.css" />
+    <script src="/script.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" >
+
+</head>
+<body>
+    <header>
+        <h1>Farmacia <br> Santa Rita</h1>
+    </header>
+    <div class="screen">
+        <div class="selected">Comprar con Receta      </div>
+        <div class="selected">Con Obra Social / Mutual</div>
+        <div class="selected">&nbsp;O.S.E.P       </div>
+        <!----------------------------------------------------->
+        <form action="http://localhost:3000/carnet" method="POST" enctype="multipart/form-data">
+            <p><label>Ahora vomos a subir una imágen del carnet de afiliado:</label></p>
+            <!--input class="custom-btn btn-13" type="file" name="carnet"-->
+
+            <label for="archivoInput" class="boton-personalizado" id="labelArchivoInput" >
+                Subir archivo
+                
+            </label><span ></span>
+
+            <input type="file" id="archivoInput" name="carnet">
+
+            <button class="custom-btn btn-13">Upload</button>
+        </form>
+
+
+        <script>
+            const archivoInput = document.getElementById('archivoInput');
+/* */
+            archivoInput.addEventListener('change', (event) => {
+                const archivoSeleccionado = event.target.files[0]; // El primer archivo seleccionado
+                if (archivoSeleccionado) {
+                    console.log('Nombre del archivo seleccionado:', archivoSeleccionado.name);
+                    document.getElementById('labelArchivoInput').innerText = archivoSeleccionado.name;
+                    console.log('Tipo MIME del archivo:', archivoSeleccionado.type);
+                    console.log('Tamaño del archivo (en bytes):', archivoSeleccionado.size);
+                    console.log('Última fecha de modificación:', archivoSeleccionado.lastModifiedDate);
+                } else {
+                    console.log('Ningún archivo seleccionado');
+                }
+            });
+        </script>
+
+    </div>
+    <footer>
+        <p>Simon Bolivar 155 Lavalle <br>
+        <a href="tel:0261-4941586" style="color: white" title="Toca para llamar a Farmacia Santa Rita"> 0261-4941586 </a>
+        </p>
+    </footer>
+</body>
+</html>
