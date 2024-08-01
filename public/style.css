@@ -46,6 +46,18 @@ input[type="file"] {
 }
 
 
+input[type="text"] {
+  /*display: inline-block;*/
+  display: flex;
+  padding: 10px 20px;
+  background-color: #fff;
+  color: #000;
+  border: 1px solid #007bff;
+  cursor: pointer;
+  font-size : 1.3em;
+}
+
+
 
   
   .screen {

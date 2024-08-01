@@ -38,8 +38,15 @@ app.get('/cu111',(req,res)=>{
 app.post('/carnet',upload.single('carnet'),(req, res)=>{
     console.log(req.body)
     console.log(req.file)
+    res.render('pages/receta',{})
+})
+
+app.post('/receta',upload.single('receta'),(req, res)=>{
+    console.log(req.body)
+    console.log(req.file)
     res.render('pages/index',{})
 })
+
 /*
 app.post('/carnet',(req,res)=>{
     res.send("Respuesta desde carnet.")
