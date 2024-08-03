@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="/style.css" />
+    <script src="/script.js"></script>
+</head>
+<body>
+        <h1>Ahora vas a chatear con un vendedor:</h1>
+
+    <div id="momento1">
+        <span>...aguarda un momento...</span>
+        <div class="spinner" ></div>
+    </div>
+
+    <div id="momento2" hidden>
+        <b>El precio de tu medicamento es de $ 4.500  ¿Cómo lo vas a pagar?</b>
+        <input type="text" id="texto" placeholder="...tu respuesta aquí...">
+        
+        <button class="custom-btn btn-13" onclick="cu00()">Volver</button>
+        <a href=<%= url %> >Volver</div>
+    </div>
+
+    <script>
+       // alert("running....")
+        var momento1 = document.getElementById('momento1')
+        var momento2 = document.getElementById('momento2')
+        setTimeout(()=>{
+            momento1.setAttribute('hidden','true');
+            momento2.removeAttribute('hidden')},3000)
+
+    </script>
+
+
+    <script src="/socket.io/socket.io.min.js"></script>
+    <script src="js/main.js"></script>
+    
+</body>
+</html></html>
