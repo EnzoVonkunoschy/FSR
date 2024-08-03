@@ -1,5 +1,6 @@
-import express from 'express'
-import multer from 'multer'
+const express = require('express')
+const multer = require('multer')
+const path = require('path')
 
 const app = express()
 
@@ -17,34 +18,46 @@ const storage = multer.diskStorage({
 
 const upload = multer({ storage })
 
+var estaUrl = path.join(__dirname);
+
+var _url = "";
+
+if(estaUrl[0] == "C" && estaUrl[1] == ":"){
+    _url = "http://localhost:3000";
+}else{
+    _url = "https://railway2-production-725e.up.railway.app";
+}
+
+
+
 app.get('/',(req,res)=>{
     
     //res.send(`<p>Hola desde servidor</p>`)
-    res.render('pages/index',{})
+    res.render('pages/index',{url: _url})
 })
 
-app.get('/cu01',(req,res)=>{
-    res.render('pages/index1',{})
+app.get('/cu1',(req,res)=>{
+    res.render('pages/index1',{url: _url})
 })
 
 app.get('/cu11',(req,res)=>{
-    res.render('pages/index11',{})
+    res.render('pages/index11',{url: _url})
 })
 
 app.get('/cu111',(req,res)=>{
-    res.render('pages/index111',{})
+    res.render('pages/index111',{url: _url})
 })
  
 app.post('/carnet',upload.single('carnet'),(req, res)=>{
     console.log(req.body)
     console.log(req.file)
-    res.render('pages/receta',{})
+    res.render('pages/receta',{url: _url})
 })
 
 app.post('/receta',upload.single('receta'),(req, res)=>{
     console.log(req.body)
     console.log(req.file)
-    res.render('pages/index',{})
+    res.render('pages/chat',{url: _url})
 })
 
 /*

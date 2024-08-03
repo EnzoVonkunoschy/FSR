@@ -22,10 +22,12 @@
         <a href="tel:0261-4941586" style="color: white" title="Toca para llamar a Farmacia Santa Rita"> 0261-4941586 </a>
         </p>
     </footer>
+
+    <pre id="transferencia" hidden><%= url %></pre>   
     <script>
-        function cu01(){
-            window.location.href = "http://localhost:3000/cu01";
-        }
+      var url= document.getElementById('transferencia').innerText;
+      console.log(url)
     </script>
+    
 </body>
 </html>

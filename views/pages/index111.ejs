@@ -18,7 +18,7 @@
         <div class="selected">Con Obra Social / Mutual</div>
         <div class="selected">&nbsp;O.S.E.P       </div>
         <!----------------------------------------------------->
-        <form action="http://localhost:3000/carnet" method="POST" enctype="multipart/form-data">
+        <form action="<%= url %>/carnet" method="POST" enctype="multipart/form-data">
 
             <p><label>Ingresa tu nombre y apellido: </label><input type="text" name="nombre" id="nombre"> </p>
             <p><label>Ahora vomos a subir una imágen del carnet de afiliado:</label></p>
@@ -53,6 +53,13 @@
         </script>
 
     </div>
+
+    <pre id="transferencia" hidden><%= url %></pre>   
+    <script>
+      var url= document.getElementById('transferencia').innerText;
+      console.log(url)
+    </script>
+
     <footer>
         <p>Simon Bolivar 155 Lavalle <br>
         <a href="tel:0261-4941586" style="color: white" title="Toca para llamar a Farmacia Santa Rita"> 0261-4941586 </a>
