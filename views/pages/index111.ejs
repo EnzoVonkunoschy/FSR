@@ -1,14 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" type="text/css" href="/style.css" />
-    <script src="/script.js"></script>
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" >
-
-</head>
+<%- include('../partials/head'); %>
 <body>
     <header>
         <h1>Farmacia <br> Santa Rita</h1>
@@ -54,12 +44,7 @@
 
     </div>
 
-    <pre id="transferencia" hidden><%= url %></pre>   
-    <script>
-      var url= document.getElementById('transferencia').innerText;
-      console.log(url)
-    </script>
-
+    <%- include('../partials/scr'); %>
     <footer>
         <p>Simon Bolivar 155 Lavalle <br>
         <a href="tel:0261-4941586" style="color: white" title="Toca para llamar a Farmacia Santa Rita"> 0261-4941586 </a>
