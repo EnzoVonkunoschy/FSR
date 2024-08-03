@@ -64,5 +64,5 @@ app.post('/receta',upload.single('receta'),(req, res)=>{
 app.post('/carnet',(req,res)=>{
     res.send("Respuesta desde carnet.")
 })*/
-
-app.listen(3000,()=>{console.log("Server listen on port 3000")})
+const port = process.env.PORT || 3000;
+app.listen(port,()=>{console.log(`Server listen on port ${port)`})
