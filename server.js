@@ -9,7 +9,7 @@ app.set('view engine','ejs')
 
 const storage = multer.diskStorage({
     destination: function(req, file, cb) {
-        cb(null, path.join(__dirname,'public/images'))
+        cb(null, 'app/public/images'))
     },
     filename: function(req, file, cb) {
         cb(null, `${Date.now()}-${file.originalname}`)
