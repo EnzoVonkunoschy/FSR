@@ -10,13 +10,17 @@ app.set('view engine','ejs')
 const storage = multer.diskStorage({
     destination: function(req, file, cb) {
         cb(null, 'public/images')
+        //cb(error, 'public/images')
     },
     filename: function(req, file, cb) {
         cb(null, `${Date.now()}-${file.originalname}`)
     }
 })
 
-const upload = multer({ storage })
+//const upload = multer({ storage })
+const upload = multer({
+    limits: { fileSize: 1 * 1024 * 1024 } // 1MB
+  });
 
 var estaUrl = path.join(__dirname);
 
