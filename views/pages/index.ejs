@@ -1,20 +1,44 @@
 <%- include('../partials/head'); %>
 <body>
-    <header>
-        <h1>Farmacia <br> Santa Rita</h1>
-    </header>
-    <div class="screen">
-        <div class="selected" hidden></div>
-        <button class="custom-btn btn-13" onclick="cu01()">Comprar con Receta</button>
-        <button class="custom-btn btn-13">Comprar sin Receta</button>
-        <button class="custom-btn btn-13">Preguntar Precio</button>
-    </div>
-    <footer>
-        <p>Simon Bolivar 155 Lavalle <br>
-        <a href="tel:0261-4941586" style="color: white" title="Toca para llamar a Farmacia Santa Rita"> 0261-4941586 </a>
-        </p>
-    </footer>
+    <div class="container">
+        <header>
+            <h1>Farmacia <br> Santa Rita</h1>
+        </header>
+        <main class="screen">
+            
+                <div id="seccion1">
+                    <button id='{"accion": "conReceta"}' onclick="procesar(this)" class="custom-btn btn-13">Comprar con Receta</button>
+                    <button id='{"accion": "sinReceta"}' onclick="procesar(this)" class="custom-btn btn-13">Comprar sin Receta</button>
+                    <button id='{"accion": "prePrecio"}' onclick="procesar(this)" class="custom-btn btn-13">Preguntar Precio</button>
+                </div>
+                    <hr>
+                <div  id="seccion2">    
+                    
+                    <button id='{"Tiene Obra Social":"si"}'     onclick="procesar(this)"   class="custom-btn btn-13"> Tengo Obra Social / Mutual</button>
+                    <button id='{"Tiene Obra Social":"no"}'     onclick="procesar(this)"   class="custom-btn btn-13"> No tengo Obra Social / Mutual</button>
+                    <button id='{"Tiene Obra Social":"volver"}' onclick="procesar(this)"   class="custom-btn btn-13"> Volver</button>
+                    
+                </div>
+                <hr>
+                <div  id="seccion3">
+                
+                    <button id='{"Nombre de Obra Social": "Osep"}'                class="custom-btn btn-13" onclick="procesar(this)">Osep                 </button>
+                    <button id='{"Nombre de Obra Social": "Pami"}'                class="custom-btn btn-13" onclick="procesar(this)">Pami                 </button>
+                    <button id='{"Nombre de Obra Social": "Recetario Solidario"}' class="custom-btn btn-13" onclick="procesar(this)">Recetario Solidario  </button>
+                    <button id='{"Nombre de Obra Social": "MPN"}'                 class="custom-btn btn-13" onclick="procesar(this)">MPN                  </button>
+                    <button id='{"Nombre de Obra Social": "OSECAC"}'              class="custom-btn btn-13" onclick="procesar(this)">OSECAC               </button>
+                    <button id='{"Nombre de Obra Social": "otra"}'                class="custom-btn btn-13" onclick="procesar(this)">otra                 </button>
+                    <button id='{"Nombre de Obra Social": "volver"}'              class="custom-btn btn-13" onclick="procesar(this)">Volver               </button>
 
+                </div>
+              
+        </main>
+        <footer>
+            <p>Simon Bolivar 155 Lavalle <br>
+            <a href="tel:0261-4941586" style="color: white" title="Toca para llamar a Farmacia Santa Rita"> 0261-4941586 </a>
+            </p>
+        </footer>
+    </div>
     <%- include('../partials/scr'); %>
     
 </body>
