@@ -1,15 +1,28 @@
 //alert("vinculado")
-let nroSec = 1
+let canSec = 3
+let nroSec = 0
+
 var traza = {}
 function procesar(arg){
+
    let obj = JSON.parse(arg.getAttribute('id'))
-    console.log(Object.keys(obj)[0])
-    let seccion = Object.keys(obj)[0]
+
    traza = {...traza,...obj}
    console.log(traza)
-   document.getElementById('seccion'+nroSec).style.display = 'none';
-   nroSec += 1;
-   document.getElementById('seccion'+nroSec).style.display = 'block';
-
+   if(nroSec < canSec - 1){
+      document.getElementById('seccion'+nroSec).style.display = 'none';
+      nroSec += 1;
+      document.getElementById('seccion'+nroSec).style.display = 'block';
+   }else{
+      window.location.href = "http://localhost:3000/cu111"
+   }
 }
+
+window.onload = function(){
+      for(let i=0 ; i<canSec ; i++){
+         document.getElementById('seccion'+i).style.display = 'none';
+      }
+      document.getElementById('seccion0').style.display = 'block';
+   }
+   
 

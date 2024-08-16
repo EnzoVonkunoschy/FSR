@@ -20,13 +20,13 @@ body {
 }
 
 /* Estilos para el botón */
-/* Oculta el botón original*/
+/* Oculta el botón original
 input[type="file"] {
   position: absolute;
   width: 0;
   height: 0;
   opacity: 0;
-} 
+} */
 
 
 input[type="text"] {

@@ -4,12 +4,34 @@ const path = require('path')
 
 const app = express()
 
+var estaUrl = path.join(__dirname);
+var _url = "";
+
+console.log(estaUrl)
+
+let produccion = false
+if(estaUrl[0] == "C" && estaUrl[1] == ":"){
+    produccion = false;
+}else{
+    produccion = true;
+}
+
+if(produccion){
+    _url = "https://farmaciasantarita.up.railway.app/";
+}else{
+    _url = "http://localhost:3000/";
+}
+
 app.use(express.static('public'))
 app.set('view engine','ejs')
 
 const storage = multer.diskStorage({
     destination: function(req, file, cb) {
-        cb(null, '/farmacia/public/images')
+        if(produccion){
+            cb(null, '/farmacia/public/images')
+        }else{
+            cb(null, path.join(__dirname),'/public/images')
+        }
     },
     filename: function(req, file, cb) {
         cb(null, `${Date.now()}-${file.originalname}`)
@@ -18,15 +40,8 @@ const storage = multer.diskStorage({
 
 const upload = multer({ storage })
 
-var estaUrl = path.join(__dirname);
 
-var _url = "";
 
-if(estaUrl[0] == "C" && estaUrl[1] == ":"){
-    _url = "http://localhost:3000/";
-}else{
-    _url = "https://farmaciasantarita.up.railway.app/";
-}
 
 
 
