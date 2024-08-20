@@ -14,7 +14,7 @@ function procesar(arg){
       nroSec += 1;
       document.getElementById('seccion'+nroSec).style.display = 'block';
    }else{
-      window.location.href = "http://localhost:3000/cu111"
+      window.location.href = url+"cu111"
    }
 }
 
