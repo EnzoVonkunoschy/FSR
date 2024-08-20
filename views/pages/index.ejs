@@ -40,7 +40,19 @@
             </p>
         </footer>
     </div>
-    <%- include('../partials/scr'); %>
+
+    <pre id="transferencia" hidden><%= url %></pre>   
+    <script>
+        window.onload = function(){
+            for(let i=0 ; i<canSec ; i++){
+                document.getElementById('seccion'+i).style.display = 'none';
+            }
+            document.getElementById('seccion0').style.display = 'block';
+        }
+        
+    var url= document.getElementById('transferencia').innerText;
+    console.log(url)
+    </script>
     
 </body>
 </html>

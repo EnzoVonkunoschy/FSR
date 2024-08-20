@@ -18,11 +18,6 @@ function procesar(arg){
    }
 }
 
-window.onload = function(){
-      for(let i=0 ; i<canSec ; i++){
-         document.getElementById('seccion'+i).style.display = 'none';
-      }
-      document.getElementById('seccion0').style.display = 'block';
-   }
+
    
 
